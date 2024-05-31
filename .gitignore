@@ -1,2 +1,7 @@
+# files
+*.pyc
+
+#folders
 .eggs
 lib.egg-info
+.venv
