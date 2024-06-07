@@ -1,7 +1,7 @@
 from typing import List
 
 
-def remove_integer_from_list_inplace(nums: List[int], val: int) -> List:
+def remove_value_inplace(nums: List[int], val: int) -> List:
     """
     Removes all occurrences of a specified value from the list in-place and returns the modified list
     containing only the elements not equal to the specified value.
@@ -13,7 +13,7 @@ def remove_integer_from_list_inplace(nums: List[int], val: int) -> List:
     Returns:
     List[int]: The modified list containing only the elements not equal to the specified value.
     """
-    
+
     i = 0
     for j in range(len(nums)):
         if nums[j] != val:
