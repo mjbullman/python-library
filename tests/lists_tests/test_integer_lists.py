@@ -149,8 +149,8 @@ class TestRotateInPlace:
     def test_k_equals_length(self):
         assert rotate_in_place([1, 2, 3, 4, 5], 5) == [1, 2, 3, 4, 5]
 
-    # def test_k_equals_zero(self):
-    #     assert rotate_in_place([1, 2, 3, 4, 5], 0) == [1, 2, 3, 4, 5]
+    def test_k_equals_zero(self):
+        assert rotate_in_place([1, 2, 3, 4, 5], 0) == [1, 2, 3, 4, 5]
 
     def test_empty_array(self):
         assert rotate_in_place([], 3) == []
@@ -164,3 +164,29 @@ class TestRotateInPlace:
     def test_large_array(self):
         assert rotate_in_place(list(range(1, 100001)), 50000) == list(range(50001, 100001)) + list(range(1, 50001))
 
+
+class TestMaxDifference:
+    """
+    A test class for the max_difference function.
+    """
+
+    def test_regular_case(self):
+        assert max_difference([1, 2, 3, 4, 5]) == 4
+
+    def test_no_difference(self):
+        assert max_difference([5, 5, 5, 5, 5]) == 0
+
+    def test_descending_order(self):
+        assert max_difference([5, 4, 3, 2, 1]) == 0
+
+    def test_mixed_order(self):
+        assert max_difference([7, 1, 5, 3, 6, 4]) == 5
+
+    def test_empty_list(self):
+        assert max_difference([]) == 0
+
+    def test_single_element(self):
+        assert max_difference([10]) == 0
+
+    def test_negative_numbers(self):
+        assert max_difference([-10, -20, -5, -30, -1]) == 29

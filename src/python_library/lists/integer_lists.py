@@ -98,3 +98,27 @@ def rotate_in_place(nums: List[int], k: int) -> List:
     reverse(k, n - 1)
 
     return nums
+
+
+def max_difference(nums: List[int]) -> int:
+    """
+     Finds the maximum difference from a list of integers by finding the lowest and highest values.
+
+     Parameters:
+     nums (List[int]): A list of integers.
+
+     Returns:
+     int: The maximum difference possible.
+     """
+    min_int = float('inf')
+    max_diff = 0
+
+    for i in nums:
+        if i < min_int:
+            min_int = i
+        if i > min_int:
+            diff = i - min_int
+            if diff > max_diff:
+                max_diff = diff
+
+    return max_diff
