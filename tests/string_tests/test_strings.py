@@ -2,6 +2,9 @@ from src.python_library.strings.strings import length_of_longest_substring
 
 
 class TestLengthOfLongestSubstring:
+    """
+    Test class for the length_of_longest_substring function.
+    """
 
     def test_examples(self):
         assert length_of_longest_substring("abcabcbb") == 3
