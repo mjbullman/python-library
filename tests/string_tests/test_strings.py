@@ -1,4 +1,31 @@
-from src.python_library.strings.strings import length_of_longest_substring
+from src.python_library.strings.strings import *
+
+
+class TestReverseString:
+    """
+    Test class for the reverse_string function.
+    """
+
+    def test_regular_string(self):
+        assert reverse("Hello, World!") == "!dlroW ,olleH"
+
+    def test_empty_string(self):
+        assert reverse("") == ""
+
+    def test_single_character(self):
+        assert reverse("a") == "a"
+
+    def test_palindrome(self):
+        assert reverse("madam") == "madam"
+
+    def test_numbers(self):
+        assert reverse("12345") == "54321"
+
+    def test_special_characters(self):
+        assert reverse("@#&*!") == "!*&#@"
+
+    def test_mixed_case(self):
+        assert reverse("AbCdEfG") == "GfEdCbA"
 
 
 class TestLengthOfLongestSubstring:
