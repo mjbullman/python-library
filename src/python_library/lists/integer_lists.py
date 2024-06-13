@@ -1,3 +1,4 @@
+import sys
 from typing import List
 
 
@@ -13,8 +14,8 @@ def remove_value_inplace(nums: List[int], val: int) -> List:
     Returns:
     List[int]: The modified list containing only the elements not equal to the specified value.
     """
+    i: int = 0
 
-    i = 0
     for j in range(len(nums)):
         if nums[j] != val:
             nums[i] = nums[j]
@@ -35,7 +36,7 @@ def remove_duplicates_in_place(nums: List[int]) -> List:
     if not nums:
         return []
 
-    i = 0
+    i: int = 0
 
     for j, num in enumerate(nums):
         if nums[i] < nums[j]:
@@ -56,14 +57,17 @@ def majority_element(nums: List[int]) -> int:
     Returns:
     int: The majority element.
     """
-    min_times = len(nums) // 2
-    num_counts = {}
+    min_times: int = len(nums) // 2
+    num_counts: dict[int, int] = {}
+    maj_element: int = 0
 
     for i in nums:
         num_counts[i] = num_counts.get(i, 0) + 1
 
         if num_counts[i] > min_times:
-            return i
+            maj_element = i
+
+    return maj_element
 
 
 def rotate_in_place(nums: List[int], k: int) -> List:
@@ -80,8 +84,8 @@ def rotate_in_place(nums: List[int], k: int) -> List:
     if not nums or k == 0:
         return nums
 
-    n = len(nums)
-    k = k % n  # in case k is larger than the length of nums.
+    n: int = len(nums)
+    l: int = k % n  # in case k is larger than the length of nums.
 
     # helper function to reverse a portion of the array.
     def reverse(start, end):
@@ -93,9 +97,9 @@ def rotate_in_place(nums: List[int], k: int) -> List:
     # step 1: reverse the entire array.
     reverse(0, n - 1)
     # step 2: reverse the first k elements.
-    reverse(0, k - 1)
+    reverse(0, l - 1)
     # step 3: reverse the remaining elements.
-    reverse(k, n - 1)
+    reverse(l, n - 1)
 
     return nums
 
@@ -110,14 +114,16 @@ def max_difference(nums: List[int]) -> int:
      Returns:
      int: The maximum difference possible.
      """
-    min_int = float('inf')
-    max_diff = 0
+    min_int: int = sys.maxsize
+    max_diff: int = 0
 
     for i in nums:
         if i < min_int:
             min_int = i
+
         if i > min_int:
             diff = i - min_int
+
             if diff > max_diff:
                 max_diff = diff
 

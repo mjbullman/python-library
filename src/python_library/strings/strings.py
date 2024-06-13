@@ -21,9 +21,9 @@ def length_of_longest_substring(string: str) -> int:
    Returns:
    int: The length of the longest substring without repeating characters.
    """
-    char_index_map = {}
-    max_length = 0
-    start = 0
+    char_index_map: dict = {}
+    max_length: int = 0
+    start:int = 0
 
     for end, char in enumerate(string):
         if char in char_index_map and char_index_map[char] >= start:

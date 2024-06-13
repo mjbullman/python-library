@@ -1,4 +1,4 @@
-def convert_to_24_hour_format(twelve_hour_format: str) -> bool | str:
+def convert_to_24_hour_format(twelve_hour_format: str) -> str:
     """
     Converts a 12-hour AM/PM time format string to a 24-hour time format string.
 
@@ -15,7 +15,7 @@ def convert_to_24_hour_format(twelve_hour_format: str) -> bool | str:
     convert_to_24_hour_format("01:05:45AM")  # Returns "01:05:45"
     """
 
-    result = False
+    result = ""
     max_minutes = 60
     max_seconds = 60
     twelve_hours = 12
