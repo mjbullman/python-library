@@ -5,9 +5,9 @@ def caesar_cipher(string: str, key: int) -> str:
     encrypted_string = ""
 
     for char in string:
-        isUpper = char.isupper()
+        is_upper = char.isupper()
 
-        if isUpper:
+        if is_upper:
             if char in alphabet_upper:
                 index = alphabet_upper.index(char)
                 new_index = (index + key) % 26
