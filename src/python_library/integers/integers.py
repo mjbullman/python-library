@@ -1,4 +1,4 @@
-def is_palindrome(self, x: int) -> bool:
+def is_palindrome(x: int) -> bool:
     """
     Determines whether an integer is a palindrome without converting it to a string.
 
