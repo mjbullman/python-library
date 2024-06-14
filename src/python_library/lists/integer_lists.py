@@ -4,8 +4,8 @@ from typing import List
 
 def remove_value_inplace(nums: List[int], val: int) -> List:
     """
-    Removes all occurrences of a specified value from the list in-place and returns the modified list
-    containing only the elements not equal to the specified value.
+    Removes all occurrences of a specified value from the list in-place and returns the modified
+    list containing only the elements not equal to the specified value.
 
     Parameters:
     nums (List[int]): The list of integers from which the specified value will be removed.
@@ -25,7 +25,8 @@ def remove_value_inplace(nums: List[int], val: int) -> List:
 
 def remove_duplicates_in_place(nums: List[int]) -> List:
     """
-    Removes duplicates from a sorted list in-place and returns the list containing only unique elements.
+    Removes duplicates from a sorted list in-place and returns the list containing only unique
+    elements.
 
     Parameters:
     nums (List[int]): A sorted list of integers, possibly with duplicates.
@@ -38,7 +39,7 @@ def remove_duplicates_in_place(nums: List[int]) -> List:
 
     i: int = 0
 
-    for j, num in enumerate(nums):
+    for j in range(1, len(nums)):
         if nums[i] < nums[j]:
             i += 1
             nums[i] = nums[j]
