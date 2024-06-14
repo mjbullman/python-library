@@ -28,6 +28,44 @@ class TestReverseString:
         assert reverse("AbCdEfG") == "GfEdCbA"
 
 
+class TestFindSubstring:
+    def test_needle_in_haystack(self):
+        assert find_substring("hello", "ll") == 2
+
+    def test_needle_not_in_haystack(self):
+        assert find_substring("aaaaa", "bba") == -1
+
+    def test_empty_needle(self):
+        assert find_substring("hello", "") == 0
+
+    def test_needle_at_start(self):
+        assert find_substring("hello", "he") == 0
+
+    def test_needle_at_end(self):
+        assert find_substring("hello", "lo") == 3
+
+    def test_needle_is_haystack(self):
+        assert find_substring("hello", "hello") == 0
+
+    def test_needle_longer_than_haystack(self):
+        assert find_substring("hi", "hello") == -1
+
+    def test_no_overlap(self):
+        assert find_substring("abcdef", "def") == 3
+
+    def test_single_character_match(self):
+        assert find_substring("a", "a") == 0
+
+    def test_single_character_no_match(self):
+        assert find_substring("a", "b") == -1
+
+    def test_repeated_characters(self):
+        assert find_substring("aaa", "aa") == 0
+
+    def test_multiple_occurrences(self):
+        assert find_substring("mississippi", "iss") == 1
+
+
 class TestLengthOfLongestSubstring:
     """
     Test class for the length_of_longest_substring function.
