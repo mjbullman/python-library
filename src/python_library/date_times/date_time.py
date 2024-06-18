@@ -1,4 +1,4 @@
-def convert_to_24_hour_format(twelve_hour_format: str) -> str | False:
+def convert_to_24_hour_format(twelve_hour_format: str) -> str:
     """
     Convert a 12-hour format time string to a 24-hour format time string.
 
