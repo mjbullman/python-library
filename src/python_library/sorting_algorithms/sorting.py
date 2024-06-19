@@ -141,7 +141,7 @@ def merge(array: list, start: int, mid: int, end: int):
     right_len = end - mid
 
     L: list = array[start:mid + 1]
-    R : list = array[mid + 1:end + 1]
+    R: list = array[mid + 1:end + 1]
 
     i: int = 0
     j: int = 0

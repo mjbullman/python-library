@@ -32,7 +32,7 @@ class TestRomanToInt:
     """
     A test class for the roman numeral to integer function.
     """
-    
+
     def test_single_characters(self):
         assert roman_to_int('I') == 1
         assert roman_to_int('V') == 5
