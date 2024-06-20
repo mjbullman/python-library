@@ -104,3 +104,36 @@ class TestLengthOfLongestSubstring:
 
     def test_numeric_string(self):
         assert length_of_longest_substring("123123123") == 3
+
+
+class TestIsSubsequence:
+    """
+    Test class for the is_subsequence function.
+    """
+
+    def test_empty_s(self):
+        assert is_subsequence("", "anystring") is True
+
+    def test_empty_t(self):
+        assert is_subsequence("any", "") is False
+
+    def test_both_empty(self):
+        assert is_subsequence("", "") is True
+
+    def test_s_is_subsequence_of_t(self):
+        assert is_subsequence("abc", "ahbgdc") is True
+
+    def test_s_is_not_subsequence_of_t(self):
+        assert is_subsequence("axc", "ahbgdc") is False
+
+    def test_s_longer_than_t(self):
+        assert is_subsequence("longstring", "short") is False
+
+    def test_s_and_t_are_equal(self):
+        assert is_subsequence("equal", "equal") is True
+
+    def test_s_with_repeated_characters(self):
+        assert is_subsequence("aaaa", "baaaab") is True
+
+    def test_case_sensitivity(self):
+        assert is_subsequence("abc", "ABC") is False

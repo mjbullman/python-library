@@ -55,3 +55,27 @@ def length_of_longest_substring(string: str) -> int:
         max_length = max(max_length, end - start + 1)
 
     return max_length
+
+
+def is_subsequence(sub_string: str, string: str) -> bool:
+    """
+    Determine if `sub_string` is a subsequence of `string`.
+
+    Parameters:
+    sub_string (str): The string to check as a subsequence.
+    string (str): The string to check against.
+
+    Returns:
+    bool: True if `sub_string` is a subsequence of `string`, False otherwise.
+    """
+    len_sub_string = len(sub_string)
+    len_string = len(string)
+    i = 0
+
+    for j in range(len_string):
+        if i < len_sub_string and sub_string[i] == string[j]:
+            i += 1
+
+    return i >= len_sub_string
+
+
