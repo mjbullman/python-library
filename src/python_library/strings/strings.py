@@ -68,9 +68,14 @@ def is_subsequence(sub_string: str, string: str) -> bool:
     Returns:
     bool: True if `sub_string` is a subsequence of `string`, False otherwise.
     """
+
     len_sub_string = len(sub_string)
     len_string = len(string)
     i = 0
+
+    # cannot be a subsequence if sub string larger than string.
+    if len_sub_string > len_string:
+        return False
 
     for j in range(len_string):
         if i < len_sub_string and sub_string[i] == string[j]:
@@ -78,4 +83,28 @@ def is_subsequence(sub_string: str, string: str) -> bool:
 
     return i >= len_sub_string
 
+
+def length_of_last_word(string: str) -> int:
+    """
+    Returns the length of the last word in the string `string`.
+
+    Parameters:
+    string (str): The input string.
+
+    Returns:
+    int: The length of the last word in `string`.
+    """
+    length = 0
+    i = len(string) - 1
+
+    # Skip trailing spaces
+    while i >= 0 and string[i] == ' ':
+        i -= 1
+
+    # Count the length of the last word
+    while i >= 0 and string[i] != ' ':
+        length += 1
+        i -= 1
+
+    return length
 

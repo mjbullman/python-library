@@ -137,3 +137,30 @@ class TestIsSubsequence:
 
     def test_case_sensitivity(self):
         assert is_subsequence("abc", "ABC") is False
+
+
+class TestLengthOfLastWord:
+    def test_single_word(self):
+        assert length_of_last_word("Hello") == 5
+
+    def test_multiple_words(self):
+        assert length_of_last_word("Hello World") == 5
+
+    def test_trailing_spaces(self):
+        assert length_of_last_word("Hello World   ") == 5
+
+    def test_leading_spaces(self):
+        assert length_of_last_word("   Hello World") == 5
+
+    def test_empty_string(self):
+        assert length_of_last_word("") == 0
+
+    def test_only_spaces(self):
+        assert length_of_last_word("    ") == 0
+
+    def test_word_with_spaces_in_middle(self):
+        assert length_of_last_word("middle   space") == 5
+
+    def test_long_string(self):
+        long_string = "a " * 10000 + "word"
+        assert length_of_last_word(long_string) == 4
