@@ -97,11 +97,11 @@ def length_of_last_word(string: str) -> int:
     length = 0
     i = len(string) - 1
 
-    # Skip trailing spaces
+    # skip trailing spaces.
     while i >= 0 and string[i] == ' ':
         i -= 1
 
-    # Count the length of the last word
+    # count the length of the last word.
     while i >= 0 and string[i] != ' ':
         length += 1
         i -= 1
