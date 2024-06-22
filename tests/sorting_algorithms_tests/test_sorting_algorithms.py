@@ -1,4 +1,4 @@
-from src.python_library.sorting_algorithms.sorting import *
+from src.python_library.algorithms.sorting import *
 
 
 class TestBubbleSortAlgorithm:

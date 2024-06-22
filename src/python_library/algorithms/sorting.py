@@ -1,5 +1,5 @@
 """
-sorting_algorithms.py
+algorithms.py
 
 This module contains implementations of various sorting algorithms.
 Each algorithm sorts a list of elements in ascending order.
@@ -21,13 +21,13 @@ Functions:
 - heap_sort(arr): Sorts `arr` using the heap sort algorithm.
 
 Examples:
-    >>> from src.python_library.sorting_algorithms.sorting import bubble_sort
+    >>> from src.python_library.algorithms.sorting import bubble_sort
     >>> arr = [64, 34, 25, 12, 22, 11, 90]
     >>> bubble_sort(arr)
     >>> print(arr)
     [11, 12, 22, 25, 34, 64, 90]
 
-    >>> from src.python_library.sorting_algorithms.sorting import quick_sort
+    >>> from src.python_library.algorithms.sorting import quick_sort
     >>> arr = [10, 7, 8, 9, 1, 5]
     >>> quick_sort(arr)
     >>> print(arr)
