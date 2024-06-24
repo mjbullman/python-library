@@ -108,3 +108,29 @@ def length_of_last_word(string: str) -> int:
 
     return length
 
+
+def is_isomorphic(string1: str, string2: str) -> bool:
+    if len(string1) != len(string2):
+        return False
+
+    # create dictionaries to store the mapping of characters.
+    s1_to_s2 = {}
+    s2_to_s1 = {}
+
+    for char_s1, char_s2 in zip(string1, string2):
+        # if the character in s is already mapped to a different character in t.
+        if char_s1 in s1_to_s2:
+            if s1_to_s2[char_s1] != char_s2:
+                return False
+        # if the character in t is already mapped to a different character in s.
+        else:
+            s1_to_s2[char_s1] = char_s2
+
+        if char_s2 in s2_to_s1:
+            if s2_to_s1[char_s2] != char_s1:
+                return False
+        else:
+            s2_to_s1[char_s2] = char_s1
+
+    return True
+

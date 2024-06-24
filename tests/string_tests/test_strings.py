@@ -140,6 +140,10 @@ class TestIsSubsequence:
 
 
 class TestLengthOfLastWord:
+    """
+    Test class for the length_of_last_word function.
+    """
+
     def test_single_word(self):
         assert length_of_last_word("Hello") == 5
 
@@ -164,3 +168,30 @@ class TestLengthOfLastWord:
     def test_long_string(self):
         long_string = "a " * 10000 + "word"
         assert length_of_last_word(long_string) == 4
+
+
+class TestIsIsomorphic:
+    """
+    Test class for the is_isomorphic function.
+    """
+
+    def test_isomorphic_strings(self):
+        assert is_isomorphic("egg", "add") is True
+        assert is_isomorphic("paper", "title") is True
+        assert is_isomorphic("ab", "ca") is True
+
+    def test_non_isomorphic_strings(self):
+        assert is_isomorphic("foo", "bar") is False
+        assert is_isomorphic("ab", "aa") is False
+        assert is_isomorphic("abc", "defg") is False
+
+    def test_empty_strings(self):
+        assert is_isomorphic("", "") is True
+
+    def test_single_character_strings(self):
+        assert is_isomorphic("a", "b") is True
+        assert is_isomorphic("a", "a") is True
+
+    def test_different_lengths(self):
+        assert is_isomorphic("a", "aa") is False
+        assert is_isomorphic("abc", "ab") is False
