@@ -2,6 +2,10 @@ from src.python_library.algorithms.sorting import *
 
 
 class TestBubbleSortAlgorithm:
+    """
+    A test class for the bubble sort algorithm.
+    """
+
     def test_unsorted_list(self):
         assert bubble_sort([64, 34, 25, 12, 22, 11, 90]) == [11, 12, 22, 25, 34, 64, 90]
 
@@ -27,6 +31,9 @@ class TestBubbleSortAlgorithm:
 
 
 class TestSelectionSort:
+    """
+    A test class for the selection sort algorithm.
+    """
     def test_general_case(self):
         assert selection_sort([64, 25, 12, 22, 11]) == [11, 12, 22, 25, 64]
 
@@ -67,6 +74,9 @@ class TestSelectionSort:
 
 
 class TestInsertionSort:
+    """
+    A test class for the insertion sort algorithm.
+    """
     def test_general_case(self):
         assert insertion_sort([64, 25, 12, 22, 11]) == [11, 12, 22, 25, 64]
 
@@ -107,6 +117,9 @@ class TestInsertionSort:
 
 
 class TestMergeSort:
+    """
+    A test class for the merge sort algorithm.
+    """
     def test_empty_array(self):
         assert merge_sort([], 0, 0) == []
 
