@@ -134,3 +134,24 @@ def is_isomorphic(string1: str, string2: str) -> bool:
 
     return True
 
+
+def isPalindrome( string: str) -> bool:
+    clean_string = ''.join(char for char in string if char.isalnum()).lower()
+    left = 0
+    right = len(clean_string) - 1
+
+    if not clean_string:
+        return True
+
+    if len(clean_string) == 1:
+        return True
+
+    while left <= right:
+        if clean_string[left] != clean_string[right]:
+            return False
+        else:
+            left += 1
+            right -= 1
+
+    return True
+
