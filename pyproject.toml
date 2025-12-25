@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mjb"
+version = "0.1.0"
+description = "Martin's Python Library - Algorithms, Data Structures, Networking, and Security Tools"
+authors = [{name = "Martin Bullman"}]
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+
+dependencies = [
+    "paramiko>=3.0.0",  # SSH functionality
+    "scapy>=2.5.0",     # Packet manipulation
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pylint>=2.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/martinbullman/PythonLibrary"
+Repository = "https://github.com/martinbullman/PythonLibrary"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["mjb*"]
+namespaces = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-function-docstring",
+    "missing-module-docstring",
+    "missing-class-docstring",
+]
