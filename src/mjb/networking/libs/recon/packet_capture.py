@@ -2,8 +2,8 @@ import socket
 import os
 import sys
 
-from python_library.networking.protocols.ipv4 import IPv4Header
-from python_library.networking.protocols.icmp import ICMPHeader
+from mjb.networking.libs.protocols.ipv4 import IPv4Header
+from mjb.networking.libs.protocols.icmp import ICMPHeader
 
 HOST = '192.168.1.144'
 

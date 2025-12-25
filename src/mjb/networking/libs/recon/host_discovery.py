@@ -1,14 +1,12 @@
-from curses import raw
 import ipaddress
-from operator import le
 import os
 import socket
 import sys
 import threading
 import time
 
-from python_library.networking.protocols.ipv4 import IPv4Header
-from python_library.networking.protocols.icmp import ICMPHeader
+from mjb.networking.libs.protocols.ipv4 import IPv4Header
+from mjb.networking.libs.protocols.icmp import ICMPHeader
 
 
 HOST = '192.168.1.144'
@@ -46,11 +44,6 @@ class Scanner():
                 ip_header = IPv4Header(raw_buffer[0:20])
         
                 if ip_header.protocol == 'ICMP':
-                    #print('Protocol: %s %s -> %s' % (ip_header.protocol, ip_header.src_address, ip_header.dst_address))
-                    #print(f'Version: ', {ip_header.ver})    
-                    #print(f'Header Length: ', {ip_header.ihl})
-                    #print(f'TTL: ', {ip_header.ttl})
-                
                     offset = ip_header.ihl * 4
                     buf = raw_buffer[offset:offset + 8]
                     icmp_header = ICMPHeader(buf)

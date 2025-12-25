@@ -1,7 +1,5 @@
 """
 TCP client utilities.
-
-Refactored from simple_TCP_client.py - parameterized for reusability.
 """
 
 import socket
