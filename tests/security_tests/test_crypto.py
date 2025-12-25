@@ -1,4 +1,4 @@
-from src.python_library.ciphers.caesar_cipher import caesar_cipher
+from mjb.security.libs.crypto.classical.caesar import caesar_cipher
 
 
 class TestCaesarCipher:

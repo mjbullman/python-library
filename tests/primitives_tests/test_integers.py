@@ -1,4 +1,4 @@
-from src.python_library.integers.integers import *
+from mjb.primitives.integers import *
 
 
 class TestIsPalindrome:

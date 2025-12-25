@@ -1,5 +1,5 @@
 import pytest
-from src.python_library.data_structures.linked_list import LinkedList
+from mjb.datastructures.linked_list import LinkedList
 
 
 class TestLinkedList:

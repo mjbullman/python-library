@@ -1,4 +1,4 @@
-from src.python_library.algorithms.searching import *
+from mjb.algorithms.searching import *
 
 
 class TestLinearSearch:

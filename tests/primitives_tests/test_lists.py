@@ -1,4 +1,4 @@
-from src.python_library.lists.integer_lists import *
+from mjb.primitives.lists import *
 
 
 class TestRemoveIntegerFromListInplace:

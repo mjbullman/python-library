@@ -1,4 +1,4 @@
-from src.python_library.date_times.date_time import convert_to_24_hour_format
+from mjb.primitives.dates import convert_to_24_hour_format
 
 
 class TestDateTime:

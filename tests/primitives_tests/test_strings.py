@@ -1,4 +1,4 @@
-from src.python_library.strings.strings import *
+from mjb.primitives.strings import *
 
 
 class TestReverseString:
