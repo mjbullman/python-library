@@ -83,7 +83,7 @@ class Arper:
         time.sleep(5)
         print(f'Sniffing {count} packets')
 
-        bpf_filter = "ip.addr == host %s" % victim
+        bpf_filter = "host %s" % victim
         packets = sniff(count = count, filter = bpf_filter, iface = self.interface)
         wrpcap('arper.pcap', packets)
         print('Got the packets')
